@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         properties = GetComponent<Properties>();
         currentScale = transform.localScale;
         properties.Speed = speed;
-        properties.ScaleFactor = transform.localScale.x;
+        properties.ScaleFactor = Abs(transform.localScale.x);
         PlayerCollision.onPlayerEatSmallerFish += updateLocalScale;
     }
 
@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontalAxis = Input.GetAxis("Horizontal");
         if (Abs(horizontalAxis)>movementThreshold)
         {
-            transform.localScale = new Vector3(Sign(horizontalAxis) * Abs(currentScale.x), currentScale.y, currentScale.z);
+            transform.localScale = new Vector3(-Sign(horizontalAxis) * Abs(currentScale.x), currentScale.y, currentScale.z);
             currentScale = transform.localScale;
         }
     }

@@ -1,0 +1,583 @@
+fileFormatVersion: 2
+guid: 56b05a01ef15ce940924816437cae9cb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8779958000252787799
+    second: __cartoon_fish_06_green_idle_0
+  - first:
+      213: 3288714764033847071
+    second: __cartoon_fish_06_green_idle_1
+  - first:
+      213: -8516530092700953984
+    second: __cartoon_fish_06_green_idle_2
+  - first:
+      213: -2318477951882393677
+    second: __cartoon_fish_06_green_idle_3
+  - first:
+      213: -5301228131789522721
+    second: __cartoon_fish_06_green_idle_4
+  - first:
+      213: -6842187525099682229
+    second: __cartoon_fish_06_green_idle_5
+  - first:
+      213: 82524257447358036
+    second: __cartoon_fish_06_green_idle_6
+  - first:
+      213: -7928382175440397882
+    second: __cartoon_fish_06_green_idle_7
+  - first:
+      213: 2123106473033371720
+    second: __cartoon_fish_06_green_idle_8
+  - first:
+      213: 5529047537361168132
+    second: __cartoon_fish_06_green_idle_9
+  - first:
+      213: -486266297018948720
+    second: __cartoon_fish_06_green_idle_10
+  - first:
+      213: 3612991895615062383
+    second: __cartoon_fish_06_green_idle_11
+  - first:
+      213: 5135667636864608360
+    second: __cartoon_fish_06_green_idle_12
+  - first:
+      213: 6603957681367014040
+    second: __cartoon_fish_06_green_idle_13
+  - first:
+      213: 496471558353183979
+    second: __cartoon_fish_06_green_idle_14
+  - first:
+      213: 6218854532650114241
+    second: __cartoon_fish_06_green_idle_15
+  - first:
+      213: 7263525347457111387
+    second: __cartoon_fish_06_green_idle_16
+  - first:
+      213: -4108353489961212504
+    second: __cartoon_fish_06_green_idle_17
+  - first:
+      213: -705782955442634566
+    second: __cartoon_fish_06_green_idle_18
+  - first:
+      213: 50767095243425194
+    second: __cartoon_fish_06_green_idle_19
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1321
+        width: 488
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c9ae3784da8d970800000000000000
+      internalID: 8779958000252787799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_1
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 1321
+        width: 488
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1fe1dd47acd3ad20800000000000000
+      internalID: 3288714764033847071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_2
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 1320
+        width: 489
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08292a1d0053fc980800000000000000
+      internalID: -8516530092700953984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_3
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 1319
+        width: 489
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7897a269c13dfd0800000000000000
+      internalID: -2318477951882393677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 992
+        width: 489
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8b06be9114e66b0800000000000000
+      internalID: -5301228131789522721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_5
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 991
+        width: 489
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4603d782baab01a0800000000000000
+      internalID: -6842187525099682229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_6
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 991
+        width: 489
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45ea08aff5f252100800000000000000
+      internalID: 82524257447358036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_7
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 990
+        width: 489
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c91655fa6ab8f190800000000000000
+      internalID: -7928382175440397882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_8
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 663
+        width: 489
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8409c79a61ac67d10800000000000000
+      internalID: 2123106473033371720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_9
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 663
+        width: 489
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40729aae07f1bbc40800000000000000
+      internalID: 5529047537361168132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_10
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 662
+        width: 490
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093e0f3116f6049f0800000000000000
+      internalID: -486266297018948720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_11
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 663
+        width: 489
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6140829cfce32230800000000000000
+      internalID: 3612991895615062383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 336
+        width: 489
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868e8cb718e854740800000000000000
+      internalID: 5135667636864608360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_13
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 336
+        width: 489
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ad79d9588f5ab50800000000000000
+      internalID: 6603957681367014040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_14
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 337
+        width: 489
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4e9bc7042d3e600800000000000000
+      internalID: 496471558353183979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_15
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 337
+        width: 489
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc1070af3fcd4650800000000000000
+      internalID: 6218854532650114241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_16
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 11
+        width: 489
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b551a38d1d93dc460800000000000000
+      internalID: 7263525347457111387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_17
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 11
+        width: 489
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a5202394423cf6c0800000000000000
+      internalID: -4108353489961212504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_18
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 12
+        width: 489
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab00154342e8436f0800000000000000
+      internalID: -705782955442634566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: __cartoon_fish_06_green_idle_19
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 13
+        width: 488
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa54346776c54b000800000000000000
+      internalID: 50767095243425194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2098241397824259186}
   - component: {fileID: 5386064422008292477}
   - component: {fileID: -1095227627429747053}
+  - component: {fileID: 1475319841284597297}
   m_Layer: 0
   m_Name: Fish Blue
   m_TagString: Untagged
@@ -74,13 +75,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7261260703562246685, guid: 0aff1d20d85def04a9b8c0d2b19e96da,
+  m_Sprite: {fileID: 3441549389025281882, guid: 9b5570ecb24c59b489980956a3a0dafd,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.33, y: 0.19}
+  m_Size: {x: 4.88, y: 3.04}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -103,8 +104,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.33, y: 0.19}
-    newSize: {x: 0.33, y: 0.19}
+    oldSize: {x: 4.88, y: 3.04}
+    newSize: {x: 4.88, y: 3.04}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -155,3 +156,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e00acb7afd884944a8bc6aaf9dfe6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleFactor: 0
+--- !u!61 &1475319841284597297
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098241397824259187}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.88, y: 3.04}
+    newSize: {x: 4.88, y: 3.04}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.88, y: 3.04}
+  m_EdgeRadius: 0

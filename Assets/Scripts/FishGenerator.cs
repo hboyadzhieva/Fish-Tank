@@ -46,7 +46,7 @@ public class FishGenerator : MonoBehaviour
             fishProperties.Speed = speed;
             fishProperties.ScaleFactor = scale;
 
-            currentFish.transform.localScale = fromLeftToRight ? new Vector3(scale, scale, 1) : new Vector3(-scale, scale, 1);
+            currentFish.transform.localScale = fromLeftToRight ? new Vector3(-scale, scale, 1) : new Vector3(scale, scale, 1);
             
             yield return new WaitForSeconds(3);
         }
