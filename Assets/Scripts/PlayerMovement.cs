@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         collider = gameObject.GetComponent<BoxCollider2D>();
-        animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.GetComponentInChildren<Animator>();
 
         height = collider.bounds.size.y;
         width = collider.bounds.size.x;
@@ -81,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
     private void ResolveLookDirection()
     {
         if (Abs(Input.GetAxis("Horizontal")) > movementThreshold) {
-            Debug.Log(Input.GetAxis("Horizontal"));
             transform.localScale = new Vector3(Sign(Input.GetAxis("Horizontal"))*currentScale, currentScale, 1f);
             animator.SetBool("isMoving", true);
         }

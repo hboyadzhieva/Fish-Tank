@@ -48,12 +48,10 @@ public class FishMovement : MonoBehaviour
         float maxHorizontal = tankBoundaries.RightBoundary() + width / 2;
         float minHorizontal = tankBoundaries.LeftBoundary() - width / 2;
         if (fromLeftToRight && transform.position.x > maxHorizontal) {
-            Debug.Log("Width: " + width);
             Destroy(gameObject);
         }
         if(!fromLeftToRight && transform.position.x < minHorizontal)
         {
-            Debug.Log("Width: " + width);
             Destroy(gameObject);
         }
     }

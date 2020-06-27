@@ -32,6 +32,7 @@ public class EnemyFishGenerator : MonoBehaviour
             // generate random values for scale, speed, direction of movement, and type of fish
             fromLeftToRight = Random.Range(0f, 1f) > 0.5f;
             xPos = fromLeftToRight ? tankBoundaries.LeftBoundary() : tankBoundaries.RightBoundary();
+            xPos = fromLeftToRight ? tankBoundaries.LeftBoundary() : tankBoundaries.RightBoundary();
             yPos = Random.Range(tankBoundaries.BottomBoundary(), tankBoundaries.TopBoundary());
             int n = Random.Range(0, fish.Length-1);
             scale = Random.Range(minScale, maxScale);

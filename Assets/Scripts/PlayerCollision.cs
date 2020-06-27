@@ -13,7 +13,7 @@ public class PlayerCollision : MonoBehaviour
 
     void Start()
     {
-        renderer = gameObject.GetComponent<Renderer>();
+        renderer = gameObject.GetComponentInChildren<Renderer>();
         size = renderer.bounds.size.x * renderer.bounds.size.y;
     }
 
@@ -21,16 +21,15 @@ public class PlayerCollision : MonoBehaviour
     {
         Renderer enemyRenderer = other.gameObject.GetComponent<Renderer>();
         float enemyFishSize = enemyRenderer.bounds.size.x * enemyRenderer.bounds.size.y;
-        Debug.Log(enemyFishSize + " enemy fish size; " + size + " size");
         if (size >= enemyFishSize)
         {
-            Debug.Log(other.gameObject);
             onPlayerEatSmallerFish += playerGrowUp;
             onPlayerEatSmallerFish?.Invoke(other.gameObject);
             Destroy(other.gameObject);
         }
         else
         {
+            onPlayerEatBiggerFish += endGame;
             onPlayerEatBiggerFish?.Invoke();
             Destroy(this.gameObject);
         }
@@ -40,5 +39,10 @@ public class PlayerCollision : MonoBehaviour
     {
         float scale = other.GetComponent<BoxCollider2D>().bounds.size.x;
         gameObject.transform.localScale += new Vector3(scale, scale, 0);
+    }
+
+    private void endGame()
+    {
+        FindObjectOfType<GameManager>().gameOver();
     }
 }
