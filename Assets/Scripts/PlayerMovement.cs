@@ -9,24 +9,21 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 3;
     private readonly float movementThreshold = 0.1f;
 
-    [SerializeField]
     private TankBoundaries tankBoundaries;
-    private BoxCollider2D collider;
     private Animator animator;
+    private Properties properties;
 
-    private float height;
-    private float width;
     private Vector3 currentScale;
 
    
     void Start()
     {
-        collider = gameObject.GetComponent<BoxCollider2D>();
         animator = gameObject.GetComponentInChildren<Animator>();
-
-        height = collider.bounds.size.y;
-        width = collider.bounds.size.x;
+        tankBoundaries = FindObjectOfType<TankBoundaries>();
+        properties = GetComponent<Properties>();
         currentScale = transform.localScale;
+        properties.Speed = speed;
+        properties.ScaleFactor = transform.localScale.x;
         PlayerCollision.onPlayerEatSmallerFish += updateLocalScale;
     }
 
@@ -36,14 +33,13 @@ public class PlayerMovement : MonoBehaviour
         moveVertical();
         resolveLookDirection();
         setMoveAnimation();
-       // currentScale = transform.localScale.x;
     }
 
     private void moveHorizontal()
     {
         Vector3 horizontalMovement;
-        float maxHorizontal = tankBoundaries.RightBoundary() + width/2;
-        float minHorizontal = tankBoundaries.LeftBoundary() - width/2;
+        float maxHorizontal = tankBoundaries.RightBoundary() + properties.Width/2;
+        float minHorizontal = tankBoundaries.LeftBoundary() - properties.Width/2;
         if (transform.position.x > maxHorizontal)
         {
             horizontalMovement = new Vector3(minHorizontal, transform.position.y, transform.position.z);
@@ -64,8 +60,8 @@ public class PlayerMovement : MonoBehaviour
     private void moveVertical()
     {
         Vector3 verticalMovement;
-        float maxVertical = tankBoundaries.TopBoundary() - height / 2;
-        float minVertical = tankBoundaries.BottomBoundary() + height / 2;
+        float maxVertical = tankBoundaries.TopBoundary() - properties.Heigth / 2;
+        float minVertical = tankBoundaries.BottomBoundary() + properties.Heigth / 2;
         if (transform.position.y > maxVertical) {
             verticalMovement = new Vector3(transform.position.x, maxVertical, transform.position.z);
             transform.position = verticalMovement;
@@ -108,8 +104,16 @@ public class PlayerMovement : MonoBehaviour
 
     void updateLocalScale(GameObject other)
     {
-        float scale = Abs(other.transform.localScale.x);
-        transform.localScale = new Vector3(currentScale.x*scale, currentScale.y*scale, currentScale.z );
+        float scale = Abs(other.transform.localScale.x)/7;
+        if(Sign(currentScale.x) == 1)
+        {
+            transform.localScale += new Vector3(scale, scale, currentScale.z);
+        }
+        else
+        {
+            transform.localScale += new Vector3(-scale, scale, currentScale.z);
+        }
         currentScale = transform.localScale;
+        properties.ScaleFactor = Abs(currentScale.x);
     }
 }

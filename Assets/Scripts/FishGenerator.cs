@@ -12,8 +12,8 @@ public class FishGenerator : MonoBehaviour
     private bool fromLeftToRight;
     private float scale;
 
-    private float minSpeed = 1, maxSpeed = 5;
-    private float minScale = 1, maxScale = 7;
+    [SerializeField]
+    private float minSpeed = 1, maxSpeed = 5, minScale = 1, maxScale = 7;
     
     [SerializeField]
     private TankBoundaries tankBoundaries;

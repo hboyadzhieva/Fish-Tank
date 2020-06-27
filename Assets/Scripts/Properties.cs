@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Properties : MonoBehaviour
 {
+    [SerializeField]
     private float scaleFactor;
     private float speed;
     private bool fromLeftToRight;

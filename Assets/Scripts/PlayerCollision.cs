@@ -19,11 +19,10 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Renderer enemyRenderer = other.gameObject.GetComponent<Renderer>();
-        float enemyFishSize = enemyRenderer.bounds.size.x * enemyRenderer.bounds.size.y;
-        if (size >= enemyFishSize)
+        float playerScaleFactor = gameObject.GetComponent<Properties>().ScaleFactor;
+        float enemyFishScaleFactor = gameObject.GetComponent<Properties>().ScaleFactor;
+        if (playerScaleFactor >= enemyFishScaleFactor)
         {
-            //onPlayerEatSmallerFish += playerGrowUp;
             onPlayerEatSmallerFish?.Invoke(other.gameObject);
             Destroy(other.gameObject);
         }
