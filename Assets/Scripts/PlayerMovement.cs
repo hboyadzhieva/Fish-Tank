@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using static UnityEngine.Mathf;
 
 public class PlayerMovement : MonoBehaviour
@@ -12,10 +13,10 @@ public class PlayerMovement : MonoBehaviour
     private TankBoundaries tankBoundaries;
     private BoxCollider2D collider;
     private Animator animator;
-    
+
     private float height;
     private float width;
-    private float currentScale;
+    private Vector3 currentScale;
 
    
     void Start()
@@ -25,14 +26,17 @@ public class PlayerMovement : MonoBehaviour
 
         height = collider.bounds.size.y;
         width = collider.bounds.size.x;
-        currentScale = transform.localScale.x;
+        currentScale = transform.localScale;
+        PlayerCollision.onPlayerEatSmallerFish += updateLocalScale;
     }
 
     void Update()
     {
         moveHorizontal();
         moveVertical();
-        ResolveLookDirection();
+        resolveLookDirection();
+        setMoveAnimation();
+       // currentScale = transform.localScale.x;
     }
 
     private void moveHorizontal()
@@ -78,15 +82,34 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void ResolveLookDirection()
+    private void resolveLookDirection()
     {
-        if (Abs(Input.GetAxis("Horizontal")) > movementThreshold) {
-            transform.localScale = new Vector3(Sign(Input.GetAxis("Horizontal"))*currentScale, currentScale, 1f);
-            animator.SetBool("isMoving", true);
-        }
-        else
+        float horizontalAxis = Input.GetAxis("Horizontal");
+        if (Abs(horizontalAxis)>movementThreshold)
         {
-            animator.SetBool("isMoving", false);
+            transform.localScale = new Vector3(Sign(horizontalAxis) * Abs(currentScale.x), currentScale.y, currentScale.z);
+            currentScale = transform.localScale;
         }
+    }
+
+    private void setMoveAnimation()
+    {
+        if(animator != null)
+        {
+            if(Abs(Input.GetAxis("Horizontal")) > movementThreshold){
+                animator.SetBool("isMoving", true);
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
+            }
+        }
+    }
+
+    void updateLocalScale(GameObject other)
+    {
+        float scale = Abs(other.transform.localScale.x);
+        transform.localScale = new Vector3(currentScale.x*scale, currentScale.y*scale, currentScale.z );
+        currentScale = transform.localScale;
     }
 }

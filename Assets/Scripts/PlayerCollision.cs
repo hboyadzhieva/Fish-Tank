@@ -8,7 +8,7 @@ public class PlayerCollision : MonoBehaviour
 {
     private Renderer renderer;
     private float size;
-    public event Action<GameObject> onPlayerEatSmallerFish;
+    public static event Action<GameObject> onPlayerEatSmallerFish;
     public event Action onPlayerEatBiggerFish;
 
     void Start()
@@ -23,7 +23,7 @@ public class PlayerCollision : MonoBehaviour
         float enemyFishSize = enemyRenderer.bounds.size.x * enemyRenderer.bounds.size.y;
         if (size >= enemyFishSize)
         {
-            onPlayerEatSmallerFish += playerGrowUp;
+            //onPlayerEatSmallerFish += playerGrowUp;
             onPlayerEatSmallerFish?.Invoke(other.gameObject);
             Destroy(other.gameObject);
         }
@@ -35,11 +35,11 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
-    private void playerGrowUp(GameObject other)
+/*    private void playerGrowUp(GameObject other)
     {
         float scale = other.GetComponent<BoxCollider2D>().bounds.size.x;
         gameObject.transform.localScale += new Vector3(scale, scale, 0);
-    }
+    }*/
 
     private void endGame()
     {
