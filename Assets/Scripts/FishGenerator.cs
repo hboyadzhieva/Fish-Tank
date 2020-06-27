@@ -13,7 +13,7 @@ public class FishGenerator : MonoBehaviour
     private float scale;
 
     private float minSpeed = 1, maxSpeed = 5;
-    private float minScale = 1, maxScale = 4;
+    private float minScale = 1, maxScale = 7;
     
     [SerializeField]
     private TankBoundaries tankBoundaries;
@@ -41,11 +41,11 @@ public class FishGenerator : MonoBehaviour
             GameObject currentFish = Instantiate(fish[n], new Vector3(xPos, yPos, -4), Quaternion.identity);
             
             //set parameters to instantiated fish
-            FishMovement movement = (FishMovement)currentFish.GetComponent("FishMovement");
-            movement.FromLeftToRight = fromLeftToRight;
-            movement.Speed = speed;
-            movement.TankBoundaries = tankBoundaries;
-            currentFish.GetComponent<BoxCollider2D>().size *= scale;
+            Properties fishProperties = currentFish.GetComponent<Properties>();
+            fishProperties.FromLeftToRight = fromLeftToRight;
+            fishProperties.Speed = speed;
+            fishProperties.ScaleFactor = scale;
+
             currentFish.transform.localScale = fromLeftToRight ? new Vector3(scale, scale, 1) : new Vector3(-scale, scale, 1);
             
             yield return new WaitForSeconds(3);

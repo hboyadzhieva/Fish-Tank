@@ -35,12 +35,6 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
-/*    private void playerGrowUp(GameObject other)
-    {
-        float scale = other.GetComponent<BoxCollider2D>().bounds.size.x;
-        gameObject.transform.localScale += new Vector3(scale, scale, 0);
-    }*/
-
     private void endGame()
     {
         FindObjectOfType<GameManager>().gameOver();

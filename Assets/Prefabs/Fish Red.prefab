@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8226508794424705888}
   - component: {fileID: 8226508794424705903}
   - component: {fileID: 8226508794424705902}
+  - component: {fileID: -8904245857508643174}
   m_Layer: 0
   m_Name: Fish Red
   m_TagString: Untagged
@@ -122,4 +123,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cd73e64dec6a44db7c6689c8ffd879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankBoundaries: {fileID: 0}
+--- !u!114 &-8904245857508643174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8226508794424705901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e00acb7afd884944a8bc6aaf9dfe6ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

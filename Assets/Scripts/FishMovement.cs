@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class FishMovement : MonoBehaviour
 {
-    private float speed;
-    private bool fromLeftToRight;
     private TankBoundaries tankBoundaries;
-    private float height;
-    private float width;
-    private BoxCollider2D collider;
     private Animator animator;
-
-    public float Speed { get => speed; set => speed = value; }
-    public bool FromLeftToRight { get => fromLeftToRight; set => fromLeftToRight = value; }
-    public TankBoundaries TankBoundaries { get => tankBoundaries; set => tankBoundaries = value; }
+    private Properties properties;
 
     private void Start()
-    {
-        collider = gameObject.GetComponent<BoxCollider2D>();
+    { 
         animator = gameObject.GetComponent<Animator>();
-        height = collider.bounds.size.y;
-        width = collider.bounds.size.x;
+        properties = gameObject.GetComponent<Properties>();
+        tankBoundaries = FindObjectOfType<TankBoundaries>();
     }
     void Update()
     {
@@ -32,7 +23,7 @@ public class FishMovement : MonoBehaviour
     private void Move()
     {
         Vector3 horizontalMovement;
-        if (FromLeftToRight)
+        if (properties.FromLeftToRight)
         {
             horizontalMovement = new Vector3(1f, 0f, 0f);
         }
@@ -40,17 +31,17 @@ public class FishMovement : MonoBehaviour
         {
             horizontalMovement = new Vector3(-1f, 0f, 0f);
         }
-        transform.position += horizontalMovement * Time.deltaTime * Speed;
+        transform.position += horizontalMovement * Time.deltaTime * properties.Speed;
     }
 
     private void DestroyFish()
     {
-        float maxHorizontal = tankBoundaries.RightBoundary() + width / 2;
-        float minHorizontal = tankBoundaries.LeftBoundary() - width / 2;
-        if (fromLeftToRight && transform.position.x > maxHorizontal) {
+        float maxHorizontal = tankBoundaries.RightBoundary() + properties.Width / 2;
+        float minHorizontal = tankBoundaries.LeftBoundary() - properties.Width / 2;
+        if (properties.FromLeftToRight && transform.position.x > maxHorizontal) {
             Destroy(gameObject);
         }
-        if(!fromLeftToRight && transform.position.x < minHorizontal)
+        if(!properties.FromLeftToRight && transform.position.x < minHorizontal)
         {
             Destroy(gameObject);
         }
