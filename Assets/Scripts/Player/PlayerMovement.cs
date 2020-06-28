@@ -14,9 +14,11 @@ public class PlayerMovement : MonoBehaviour
     private Properties properties;
 
     private Vector3 currentScale;
+    private Vector3 initialScale;
+    private Vector3 initialPosition;
 
    
-    void Start()
+    void OnEnable()
     {
         animator = gameObject.GetComponentInChildren<Animator>();
         tankBoundaries = FindObjectOfType<TankBoundaries>();
@@ -25,6 +27,11 @@ public class PlayerMovement : MonoBehaviour
         properties.Speed = speed;
         properties.ScaleFactor = Abs(transform.localScale.x);
         PlayerCollision.onPlayerEatSmallerFish += updateLocalScale;
+    }
+
+    private void OnDisable()
+    {
+        PlayerCollision.onPlayerEatSmallerFish -= updateLocalScale;
     }
 
     void Update()
@@ -104,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
     void updateLocalScale(GameObject other)
     {
-        float scale = Abs(other.transform.localScale.x)/7;
+        float scale = Abs(other.transform.localScale.x)/10;
         if(Sign(currentScale.x) == 1)
         {
             transform.localScale += new Vector3(scale, scale, currentScale.z);

@@ -32,7 +32,7 @@ public class PlayerCollision : MonoBehaviour
             {
                 onPlayerEatBiggerFish += endGame;
                 onPlayerEatBiggerFish?.Invoke();
-                Destroy(this.gameObject);
+                gameObject.SetActive(false);
             }
         }
         else if (other.CompareTag("Power"))

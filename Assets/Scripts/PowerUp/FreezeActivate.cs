@@ -6,18 +6,18 @@ using UnityEngine;
 public class FreezeActivate : PowerActivate
 {
     private GameObject[] activeEnemyFish;
-    private FishGenerator generator;
+    private FishGeneratorParameters generatorParameters;
 
     public override void activatePower()
     {
         base.activatePower();
-        generator = FindObjectOfType<FishGenerator>();
+        generatorParameters = FindObjectOfType<FishGeneratorParameters>();
         activeEnemyFish = GameObject.FindGameObjectsWithTag("Fish");
         foreach(GameObject fish in activeEnemyFish)
         {
             fish.GetComponent<FishMovement>().freeze();
         }
-        generator.freeze();
+        generatorParameters.FreezePowerUpActivated = true;
         Debug.Log("FREEZE ACTIVATED");
     }
 
@@ -26,9 +26,11 @@ public class FreezeActivate : PowerActivate
         base.deactivatePower();
         foreach (GameObject fish in activeEnemyFish)
         {
-            fish.GetComponent<FishMovement>().unfreeze();
+            if (fish != null) {
+                fish.GetComponent<FishMovement>().unfreeze();
+            }
         }
-        generator.unfreeze();
+        generatorParameters.FreezePowerUpActivated = false;
         Debug.Log("FREEZE DEACTIVATED");
     }
 }
