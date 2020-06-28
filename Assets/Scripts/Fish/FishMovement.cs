@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class FishMovement : MonoBehaviour
     private TankBoundaries tankBoundaries;
     private Animator animator;
     private Properties properties;
+    private bool isFreezed = false;
 
     private void Start()
     { 
@@ -16,7 +18,10 @@ public class FishMovement : MonoBehaviour
     }
     void Update()
     {
-        Move();
+        if (!this.isFreezed)
+        {
+            Move();
+        }
         DestroyFish();
     }
 
@@ -45,6 +50,16 @@ public class FishMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void freeze()
+    {
+        isFreezed = true;
+    }
+
+    public void unfreeze()
+    {
+        isFreezed = false;
     }
 
 
