@@ -8,20 +8,29 @@ public class GameManager : MonoBehaviour
     bool gameHasEnded = false;
     public float restartDelay = 1f;
     [SerializeField]
-    private GameObject gameOverMenu;
+    private GameObject gameOverUI;
+    [SerializeField]
+    private GameObject powerUI;
+    [SerializeField]
+    private GameObject scoreUI;
 
     public void gameOver()
     {
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            gameOverMenu.SetActive(true);
+            gameOverUI.SetActive(true);
+            gameOverUI.GetComponentInChildren<FinalScore>().FinalScoreResult = FindObjectOfType<Score>().CurrentScore;
+            powerUI.SetActive(false);
+            scoreUI.SetActive(false);
         }
     }
 
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        scoreUI.SetActive(true);
+        powerUI.SetActive(false);
     }
 
     public void loadMainMenu()

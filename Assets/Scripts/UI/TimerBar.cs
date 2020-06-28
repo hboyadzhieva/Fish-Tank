@@ -17,13 +17,6 @@ public class TimerBar : MonoBehaviour
     float timeLeft;
     public event Action timesUp;
 
-/*    public void Start()
-    {
-        timeLeft = maxTime;
-        slider.maxValue = timeLeft/maxTime;
-        fill.color = gradient.Evaluate(timeLeft / maxTime);
-    }*/
-
     private void OnEnable()
     {
         timeLeft = maxTime;
