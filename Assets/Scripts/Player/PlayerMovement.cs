@@ -27,11 +27,13 @@ public class PlayerMovement : MonoBehaviour
         properties.Speed = speed;
         properties.ScaleFactor = Abs(transform.localScale.x);
         PlayerCollision.onPlayerEatSmallerFish += updateLocalScale;
+        Lives.onGameOver += disablePlayer;
     }
 
     private void OnDisable()
     {
         PlayerCollision.onPlayerEatSmallerFish -= updateLocalScale;
+        Lives.onGameOver -= disablePlayer;
     }
 
     void Update()
@@ -122,5 +124,10 @@ public class PlayerMovement : MonoBehaviour
         }
         currentScale = transform.localScale;
         properties.ScaleFactor = Abs(currentScale.x);
+    }
+    
+    private void disablePlayer()
+    {
+        gameObject.SetActive(false);
     }
 }

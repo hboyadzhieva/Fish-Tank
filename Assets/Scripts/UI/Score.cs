@@ -4,8 +4,7 @@ using TMPro;
 using UnityEngine;
 
 public class Score : MonoBehaviour
-{
-    [SerializeField]
+{ 
     private int currentScore;
     public int CurrentScore { get => currentScore; set => currentScore = value; }
 

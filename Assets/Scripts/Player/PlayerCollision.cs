@@ -8,7 +8,7 @@ public class PlayerCollision : MonoBehaviour
 {
     private float size;
     public static event Action<GameObject> onPlayerEatSmallerFish;
-    public event Action onPlayerEatBiggerFish;
+    public static event Action onPlayerEatBiggerFish;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,9 +23,7 @@ public class PlayerCollision : MonoBehaviour
             }
             else
             {
-                onPlayerEatBiggerFish += endGame;
                 onPlayerEatBiggerFish?.Invoke();
-                gameObject.SetActive(false);
             }
         }
         else if (other.CompareTag("Power"))
@@ -33,11 +31,6 @@ public class PlayerCollision : MonoBehaviour
             other.gameObject.GetComponent<PowerActivate>().activatePower();
         }
        
-    }
-
-    private void endGame()
-    {
-        FindObjectOfType<GameManager>().gameOver();
     }
 
 }
