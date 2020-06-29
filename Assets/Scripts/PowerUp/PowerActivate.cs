@@ -5,27 +5,33 @@ using UnityEngine.UI;
 
 public abstract class PowerActivate : MonoBehaviour
 {
-    [SerializeField]
     private GameObject powerUI;
-    [SerializeField]
     private GameObject powerIcon;
     private TimerBar timerBar;
+
+    public GameObject PowerUI { get => powerUI; set => powerUI = value; }
+    public GameObject PowerIcon { get => powerIcon; set => powerIcon = value; }
+    public TimerBar TimerBar { get => timerBar; set => timerBar = value; }
 
     public virtual void activatePower()
     {
         Debug.Log("POWER ACTIVATED");
-        powerUI.SetActive(true);
-        timerBar = powerUI.GetComponentInChildren<TimerBar>();
-        powerIcon.GetComponent<Image>().sprite = powerSprite();
-        timerBar.timesUp += deactivatePower;
+        Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+        PowerUI = Helper.FindObject(canvas.gameObject, "PowerUI");
+        GameObject timer = Helper.FindObject(PowerUI, "Timer");
+        PowerIcon = Helper.FindObject(timer, "Icon");
+        PowerUI.SetActive(true);
+        TimerBar = PowerUI.GetComponentInChildren<TimerBar>();
+        PowerIcon.GetComponent<Image>().sprite = powerSprite();
+        TimerBar.timesUp += deactivatePower;
         
     }
 
     public virtual void deactivatePower()
     {
-        powerUI.SetActive(false);
+        PowerUI.SetActive(false);
         Debug.Log("POWER DEACTIVATED");
-        timerBar.timesUp -= deactivatePower;
+        TimerBar.timesUp -= deactivatePower;
     }
 
     private Sprite powerSprite()

@@ -33,7 +33,7 @@ public class FishGenerator : MonoBehaviour
                     fromLeftToRight = Random.Range(0f, 1f) > 0.5f;
                     xPos = fromLeftToRight ? tankBoundaries.LeftBoundary() : tankBoundaries.RightBoundary();
                     yPos = Random.Range(tankBoundaries.BottomBoundary(), tankBoundaries.TopBoundary());
-                    int n = Random.Range(0, fish.Length - 1);
+                    int n = Random.Range(0, fish.Length);
                     scale = Random.Range(parameters.MinScale, parameters.MaxScale);
                     speed = Random.Range(parameters.MinSpeed, parameters.MaxSpeed);
 

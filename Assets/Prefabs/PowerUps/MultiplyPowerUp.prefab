@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3983112378758360221}
   - component: {fileID: -5717448436241011542}
-  - component: {fileID: 5347561448407179176}
   - component: {fileID: 5296506342835847078}
+  - component: {fileID: -6726818914521168325}
   m_Layer: 0
   m_Name: MultiplyPowerUp
   m_TagString: Power
@@ -83,20 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5347561448407179176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214096251290658270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ca7951370eea845b05dd7c5092a707, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUI: {fileID: 0}
-  powerIcon: {fileID: 0}
 --- !u!61 &5296506342835847078
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -123,3 +109,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
+--- !u!114 &-6726818914521168325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214096251290658270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40806a95d2d05c5418ee5c6e6a5732aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
