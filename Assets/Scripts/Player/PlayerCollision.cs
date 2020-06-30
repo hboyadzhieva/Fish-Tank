@@ -29,6 +29,7 @@ public class PlayerCollision : MonoBehaviour
         else if (other.CompareTag("Power"))
         {
             other.gameObject.GetComponent<PowerActivate>().activatePower();
+            Destroy(other.gameObject);
         }
        
     }

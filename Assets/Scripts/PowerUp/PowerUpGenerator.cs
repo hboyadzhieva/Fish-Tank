@@ -18,6 +18,7 @@ public class PowerUpGenerator : MonoBehaviour
     {
         while (true)
         {
+            yield return new WaitForSeconds(16);
             //generate random values
             xPos = Random.Range(tankBoundaries.LeftBoundary(), tankBoundaries.RightBoundary());
             yPos = Random.Range(tankBoundaries.BottomBoundary(), tankBoundaries.TopBoundary());
@@ -25,12 +26,19 @@ public class PowerUpGenerator : MonoBehaviour
 
             //instantiate random powerUp
             GameObject powerUp = Instantiate(powerUps[n], new Vector3(xPos, yPos, -4), Quaternion.identity);
-
-            //Destroy(powerUp);
-
-            yield return new WaitForSeconds(10);
+            StartCoroutine(destroyAfterDelay(powerUp));
+            
         }
         
+    }
+
+    private IEnumerator destroyAfterDelay(GameObject powerup)
+    {
+        yield return new WaitForSeconds(5);
+        if (powerup != null)
+        {
+            Destroy(powerup);
+        }
     }
 
 }
