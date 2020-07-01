@@ -9,6 +9,7 @@ public class PlayerCollision : MonoBehaviour
     private float size;
     public static event Action<GameObject> onPlayerEatSmallerFish;
     public static event Action onPlayerEatBiggerFish;
+    private bool playerHitBigFish = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,7 +24,11 @@ public class PlayerCollision : MonoBehaviour
             }
             else
             {
-                onPlayerEatBiggerFish?.Invoke();
+                if (!playerHitBigFish)
+                {
+                    playerHitBigFish = true;
+                    onPlayerEatBiggerFish?.Invoke();
+                }
             }
         }
         else if (other.CompareTag("Power"))
@@ -32,6 +37,13 @@ public class PlayerCollision : MonoBehaviour
             Destroy(other.gameObject);
         }
        
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Fish")){
+            playerHitBigFish = false;
+        }
     }
 
 }

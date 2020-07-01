@@ -17,9 +17,9 @@ public abstract class PowerActivate : MonoBehaviour
     {
         Debug.Log("POWER ACTIVATED");
         Canvas canvas = GameObject.FindObjectOfType<Canvas>();
-        PowerUI = Helper.FindObject(canvas.gameObject, "PowerUI");
-        GameObject timer = Helper.FindObject(PowerUI, "Timer");
-        PowerIcon = Helper.FindObject(timer, "Icon");
+        PowerUI = FindUtil.FindObject(canvas.gameObject, "PowerUI");
+        GameObject timer = FindUtil.FindObject(PowerUI, "Timer");
+        PowerIcon = FindUtil.FindObject(timer, "Icon");
         PowerUI.SetActive(true);
         TimerBar = PowerUI.GetComponentInChildren<TimerBar>();
         PowerIcon.GetComponent<Image>().sprite = powerSprite();

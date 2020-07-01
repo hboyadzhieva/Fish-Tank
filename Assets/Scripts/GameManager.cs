@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour
     private GameObject powerUI;
     [SerializeField]
     private GameObject scoreUI;
+    [SerializeField]
+    FishGeneratorParameters fishGeneratorParameters;
+    [SerializeField]
+    private float secondsOfDifficultyGameChange;
+
 
     public void gameOver()
     {
@@ -36,5 +41,10 @@ public class GameManager : MonoBehaviour
     public void loadMainMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void gameTimelineParameters()
+    {
+
     }
 }

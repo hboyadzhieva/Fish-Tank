@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class Helper
+public static class FindUtil
 {
     public static GameObject FindObject(this GameObject parent, string name)
     {

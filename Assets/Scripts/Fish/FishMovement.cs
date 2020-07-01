@@ -22,7 +22,7 @@ public class FishMovement : MonoBehaviour
         {
             Move();
         }
-        DestroyFish();
+        fishOutOfScreen();
     }
 
     private void Move()
@@ -39,7 +39,7 @@ public class FishMovement : MonoBehaviour
         transform.position += horizontalMovement * Time.deltaTime * properties.Speed;
     }
 
-    private void DestroyFish()
+    private void fishOutOfScreen()
     {
         float maxHorizontal = tankBoundaries.RightBoundary() + properties.Width / 2;
         float minHorizontal = tankBoundaries.LeftBoundary() - properties.Width / 2;
@@ -61,6 +61,8 @@ public class FishMovement : MonoBehaviour
     {
         isFreezed = false;
     }
+
+
 
 
 

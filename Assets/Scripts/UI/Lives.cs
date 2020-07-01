@@ -46,6 +46,7 @@ public class Lives : MonoBehaviour
 
     private void loseLife() {
         CurrentLives--;
+        Camera.main.GetComponent<CameraShake>().shakeCamera();
     }
 
     private void OnDisable()
