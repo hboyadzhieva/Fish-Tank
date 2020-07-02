@@ -4,9 +4,7 @@ using static UnityEngine.Mathf;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    [Range(1, 5)]
-    private float speed = 3;
+  
     private readonly float movementThreshold = 0.1f;
 
     private TankBoundaries tankBoundaries;
@@ -24,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
         tankBoundaries = FindObjectOfType<TankBoundaries>();
         properties = GetComponent<Properties>();
         currentScale = transform.localScale;
-        properties.Speed = speed;
         properties.ScaleFactor = Abs(transform.localScale.x);
         PlayerCollision.onPlayerEatSmallerFish += updateLocalScale;
         Lives.onGameOver += disablePlayer;
@@ -61,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             horizontalMovement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-            transform.position += horizontalMovement * Time.deltaTime * speed;
+            transform.position += horizontalMovement * Time.deltaTime * properties.Speed;
         }
         
     }
@@ -83,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             verticalMovement = new Vector3(0f, Input.GetAxis("Vertical"), 0f);
-            transform.position += verticalMovement * Time.deltaTime * speed;
+            transform.position += verticalMovement * Time.deltaTime * properties.Speed;
         }
     }
 

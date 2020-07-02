@@ -25,10 +25,4 @@ public class Properties : MonoBehaviour
         Width = boxCollider.bounds.size.x;
         Heigth = boxCollider.bounds.size.y;
     }
-
-    public bool fishTooBig()
-    {
-        TankBoundaries boundaries = FindObjectOfType<TankBoundaries>();
-        return Width > (boundaries.RightBoundary() - boundaries.LeftBoundary());
-    }
 }

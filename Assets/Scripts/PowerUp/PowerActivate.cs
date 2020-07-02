@@ -15,7 +15,6 @@ public abstract class PowerActivate : MonoBehaviour
 
     public virtual void activatePower()
     {
-        Debug.Log("POWER ACTIVATED");
         Canvas canvas = GameObject.FindObjectOfType<Canvas>();
         PowerUI = FindUtil.FindObject(canvas.gameObject, "PowerUI");
         GameObject timer = FindUtil.FindObject(PowerUI, "Timer");
@@ -30,7 +29,6 @@ public abstract class PowerActivate : MonoBehaviour
     public virtual void deactivatePower()
     {
         PowerUI.SetActive(false);
-        Debug.Log("POWER DEACTIVATED");
         TimerBar.timesUp -= deactivatePower;
     }
 

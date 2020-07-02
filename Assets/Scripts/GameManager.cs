@@ -48,10 +48,12 @@ public class GameManager : MonoBehaviour
     [Range(0.2f, 5f)]
     private float secondsBtwFish;
     [SerializeField]
-    [Range(2, 4)]
+    [Range(2, 6)]
     private float secondsForPowerUp;
     [SerializeField]
     private float secondsOfDifficultyGameChange;
+    [SerializeField]
+    private float playerSpeed;
 
     private void Start()
     {
@@ -60,6 +62,7 @@ public class GameManager : MonoBehaviour
         gameOverUI.SetActive(false);
         pauseUI.SetActive(false);
         playerProperties = GameObject.FindGameObjectWithTag("Player").GetComponent<Properties>();
+        playerProperties.Speed = playerSpeed;
         fishGeneratorParameters.MinScale = minFishScale * playerProperties.ScaleFactor;
         fishGeneratorParameters.MaxScale = maxFishScale * playerProperties.ScaleFactor;
         fishGeneratorParameters.MinSpeed = minFishSpeed;
@@ -82,10 +85,6 @@ public class GameManager : MonoBehaviour
         }
         fishGeneratorParameters.MinSpeed = minFishSpeed;
         fishGeneratorParameters.MaxSpeed = maxFishSpeed;
-        if (playerProperties.fishTooBig())
-        {
-            Debug.Log("NOW");
-        }
 
     }
 

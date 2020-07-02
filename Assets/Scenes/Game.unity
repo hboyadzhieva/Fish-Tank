@@ -1271,7 +1271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9686cb7c525abad4ba7c1047b62f7215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
 --- !u!212 &735350751
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3379,14 +3378,15 @@ MonoBehaviour:
   powerUpGeneratorParameters: {fileID: 1613187864}
   playerProperties: {fileID: 735350757}
   minFishScale: 0.224
-  maxFishScale: 1.433
+  maxFishScale: 1.047
   minFishSpeed: 1.435
   maxFishSpeed: 4.373
   maxFishPerSecond: 1
-  secondsBtwPowerUps: 16.61
-  secondsBtwFish: 4
-  secondsForPowerUp: 4
+  secondsBtwPowerUps: 14.34
+  secondsBtwFish: 2.92
+  secondsForPowerUp: 4.34
   secondsOfDifficultyGameChange: 10
+  playerSpeed: 2.7
 --- !u!4 &1685178094
 Transform:
   m_ObjectHideFlags: 0
