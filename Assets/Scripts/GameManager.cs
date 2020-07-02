@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
+    bool gameIsPaused = false;
+
     private float restartDelay = 1f;
     [SerializeField]
     private GameObject gameOverUI;
@@ -14,6 +16,8 @@ public class GameManager : MonoBehaviour
     private GameObject powerUI;
     [SerializeField]
     private GameObject scoreUI;
+    [SerializeField]
+    private GameObject pauseUI;
     [SerializeField]
     FishGeneratorParameters fishGeneratorParameters;
     [SerializeField]
@@ -38,7 +42,7 @@ public class GameManager : MonoBehaviour
     [Range(1, 5)]
     private int maxFishPerSecond;
     [SerializeField]
-    [Range(5, 15)]
+    [Range(10, 20)]
     private float secondsBtwPowerUps;
     [SerializeField]
     [Range(0.2f, 5f)]
@@ -54,6 +58,7 @@ public class GameManager : MonoBehaviour
         powerUI.SetActive(false);
         scoreUI.SetActive(true);
         gameOverUI.SetActive(false);
+        pauseUI.SetActive(false);
         playerProperties = GameObject.FindGameObjectWithTag("Player").GetComponent<Properties>();
         fishGeneratorParameters.MinScale = minFishScale * playerProperties.ScaleFactor;
         fishGeneratorParameters.MaxScale = maxFishScale * playerProperties.ScaleFactor;
@@ -103,6 +108,26 @@ public class GameManager : MonoBehaviour
         powerUI.SetActive(false);
     }
 
+    public void pause()
+    {
+        if (!gameIsPaused)
+        {
+            gameIsPaused = true;
+            pauseUI.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void resume()
+    {
+        if (gameIsPaused)
+        {
+            gameIsPaused = false;
+            pauseUI.SetActive(false);
+            Time.timeScale = 1f;
+        }
+    }
+
     public void loadMainMenu()
     {
         SceneManager.LoadScene("Menu");
@@ -117,4 +142,6 @@ public class GameManager : MonoBehaviour
         maxFishPerSecond = (int) Mathf.Round(maxFishPerSecond + 0.5f);
 
     }
+
+
 }
