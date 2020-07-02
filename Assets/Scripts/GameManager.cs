@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         scoreUI.SetActive(true);
         gameOverUI.SetActive(false);
         pauseUI.SetActive(false);
+        Time.timeScale = 1f;
         playerProperties = GameObject.FindGameObjectWithTag("Player").GetComponent<Properties>();
         playerProperties.Speed = playerSpeed;
         fishGeneratorParameters.MinScale = minFishScale * playerProperties.ScaleFactor;
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
         powerUpGeneratorParameters.SecondsDelayBtwPowerUps = secondsBtwPowerUps;
         powerUpGeneratorParameters.SecondsBeforePowerUpDissapears = secondsForPowerUp;
         StartCoroutine(levelUp());
+ 
     }
 
     private void Update()
