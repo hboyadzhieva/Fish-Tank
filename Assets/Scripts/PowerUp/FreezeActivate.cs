@@ -18,7 +18,6 @@ public class FreezeActivate : PowerActivate
             fish.GetComponent<FishMovement>().freeze();
         }
         generatorParameters.FreezePowerUpActivated = true;
-        Debug.Log("FREEZE ACTIVATED");
     }
 
     public override void deactivatePower()
@@ -31,6 +30,5 @@ public class FreezeActivate : PowerActivate
             }
         }
         generatorParameters.FreezePowerUpActivated = false;
-        Debug.Log("FREEZE DEACTIVATED");
     }
 }

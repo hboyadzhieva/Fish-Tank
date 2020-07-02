@@ -5,7 +5,7 @@ using UnityEngine;
 public class MultiplyActivate : PowerActivate
 {
     private FishGeneratorParameters generatorParameters;
-    private float initialMaxScale, initialMaxFishPerSecond;
+    private float initialMaxScale, initialMaxFishPerSecond, initialSecondsDelay;
     GameObject player;
     public override void activatePower()
     {
@@ -14,10 +14,11 @@ public class MultiplyActivate : PowerActivate
         player = GameObject.FindGameObjectWithTag("Player");
         initialMaxScale = generatorParameters.MaxScale;
         initialMaxFishPerSecond = generatorParameters.MaxFishPerSecond;
-        generatorParameters.MaxFishPerSecond = 3;
+        initialSecondsDelay = generatorParameters.SecondsDelay;
+        generatorParameters.MaxFishPerSecond = initialMaxFishPerSecond*2;
         generatorParameters.MaxScale = player.GetComponent<Properties>().ScaleFactor;
+        generatorParameters.SecondsDelay /= 2;
         generatorParameters.MultiplyPowerUpActivated = true;
-        Debug.Log("MULTIPLY ACTIVATED");
     }
 
     public override void deactivatePower()
@@ -25,7 +26,7 @@ public class MultiplyActivate : PowerActivate
         base.deactivatePower();
         generatorParameters.MaxScale = initialMaxScale;
         generatorParameters.MaxFishPerSecond = initialMaxFishPerSecond;
+        generatorParameters.SecondsDelay = initialSecondsDelay;
         generatorParameters.MultiplyPowerUpActivated = false;
-        Debug.Log("MULTIPLY DEACTIVATED");
     }
 }

@@ -49,7 +49,7 @@ public class FishGenerator : MonoBehaviour
                     currentFish.transform.localScale = fromLeftToRight ? new Vector3(-scale, scale, 1) : new Vector3(scale, scale, 1);
                 }
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(parameters.SecondsDelay);
         }
     }
 

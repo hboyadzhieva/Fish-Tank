@@ -8,6 +8,8 @@ public class PowerUpGenerator : MonoBehaviour
     private TankBoundaries tankBoundaries;
     [SerializeField]
     private GameObject[] powerUps;
+    [SerializeField]
+    private PowerUpGeneratorParameters parameters;
     private float xPos, yPos;
     void Start()
     {
@@ -18,7 +20,7 @@ public class PowerUpGenerator : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(16);
+            yield return new WaitForSeconds(parameters.SecondsDelayBtwPowerUps);
             //generate random values
             xPos = Random.Range(tankBoundaries.LeftBoundary(), tankBoundaries.RightBoundary());
             yPos = Random.Range(tankBoundaries.BottomBoundary(), tankBoundaries.TopBoundary());
@@ -34,7 +36,7 @@ public class PowerUpGenerator : MonoBehaviour
 
     private IEnumerator destroyAfterDelay(GameObject powerup)
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(parameters.SecondsBeforePowerUpDissapears);
         if (powerup != null)
         {
             Destroy(powerup);
